@@ -34,3 +34,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Rendering Strategy
+
+Для страницы была выбрана стратегия ISR (Incremental Static Regeneration).
+
+Значение `revalidate = 30` выбрано потому, что статьи обновляются нечасто.
+Такой интервал позволяет сохранить быструю загрузку страницы благодаря предварительной генерации,
+но при этом обновлять данные примерно каждые 30 секунд.
