@@ -1,6 +1,7 @@
 import { articles } from "@/app/data/articles";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import TagBadge from "@/app/components/TagBadge";
 export default async function TagPage({ params, }: { params: Promise<{ tag: string }>; }) {
     const { tag } = await params;
     const filteredArticles = articles.filter((article) => article.tags.includes(tag));
@@ -14,7 +15,7 @@ export default async function TagPage({ params, }: { params: Promise<{ tag: stri
                     Статьи по тегу: #{tag}
                 </h1>
 
-                <div className="flex flex-col gap-5">
+                <div className="grid gap-5 md:grid-cols-2">
                     {filteredArticles.map((article) => (
                         <Link
                             key={article.slug}
@@ -29,12 +30,7 @@ export default async function TagPage({ params, }: { params: Promise<{ tag: stri
 
                                     <div className="flex flex-wrap gap-2">
                                         {article.tags.map((tag) => (
-                                            <span
-                                                key={tag}
-                                                className="rounded-full border border-zinc-300 px-3 py-1 text-sm dark:border-zinc-700"
-                                            >
-                                                #{tag}
-                                            </span>
+                                            <TagBadge key={tag} tag={tag}/>
                                         ))}
                                     </div>
                                 </div>

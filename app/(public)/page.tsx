@@ -2,14 +2,14 @@
 // Я выбрал ISR, потому что статьи обновляются нечасто.
 // Страница генерируется заранее, поэтому загружается быстро.
 // Благодаря revalidate = 30 она автоматически пересоздаётся примерно раз в 30 секунд, если данные изменились.
-import LikeArticleButton from "@/components/LikeArticleButton";
+import LikeArticleButton from "@/app/components/LikeArticleButton";
 import Link from "next/link";
 export const revalidate = 30;
 export default function Home() {
   const lastUpdate = new Date().toLocaleString();
   return (
     <div className="flex min-h-screen items-center justify-center bg-background text-foreground">
-      <main className="flex w-full max-w-3xl flex-col gap-6 rounded-xl bg-white p-10 shadow-lg dark:bg-zinc-900">
+      <main className="grid w-full max-w-3xl gap-6 rounded-xl bg-white p-10 shadow-lg dark:bg-zinc-900">
         <h1 className="text-center text-4xl font-bold">
           My Home Work
         </h1>

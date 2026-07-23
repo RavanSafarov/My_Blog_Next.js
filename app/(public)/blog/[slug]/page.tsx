@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { articles } from "@/app/data/articles";
 import { Suspense } from "react";
 import RelatedArticles from "@/app/components/RelatedArticles";
+import TagBadge from "@/app/components/TagBadge";
 export async function generateStaticParams() {
     return articles.map((article) => ({
         slug: article.slug,
@@ -34,12 +35,7 @@ export default async function ArticlePage({ params, }: { params: Promise<{ slug:
 
                     <div className="flex flex-wrap gap-2">
                         {article.tags.map((tag) => (
-                            <span
-                                key={tag}
-                                className="rounded-full border border-zinc-300 px-4 py-1 text-sm transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
-                            >
-                                #{tag}
-                            </span>
+                            <TagBadge key={tag} tag={tag}/>
                         ))}
                     </div>
                 </div>
