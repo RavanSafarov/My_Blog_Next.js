@@ -1,7 +1,7 @@
-import { articles } from "@/app/data/articles";
+import { articles } from "@/data/articles";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import TagBadge from "@/app/components/TagBadge";
+import TagBadge from "@/components/TagBadge";
 export default async function TagPage({ params, }: { params: Promise<{ tag: string }>; }) {
     const { tag } = await params;
     const filteredArticles = articles.filter((article) => article.tags.includes(tag));
@@ -30,7 +30,7 @@ export default async function TagPage({ params, }: { params: Promise<{ tag: stri
 
                                     <div className="flex flex-wrap gap-2">
                                         {article.tags.map((tag) => (
-                                            <TagBadge key={tag} tag={tag}/>
+                                            <TagBadge key={tag} tag={tag} />
                                         ))}
                                     </div>
                                 </div>

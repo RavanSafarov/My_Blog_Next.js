@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { articles } from "@/app/data/articles";
+import { articles } from "@/data/articles";
 const corsHeaders = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
