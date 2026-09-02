@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
 
-export default function LikeArticleButton(){
+export default function LikeArticleButton({children}: {children: React.ReactNode}){
     const [like,setLike] = useState(0)
-    return <div>
+    return <div className="flex gap-3 items-center">
+        {children}
         <button onClick={()=>setLike((prev)=>prev + 1)}>
             <p>{like}</p>
         </button>

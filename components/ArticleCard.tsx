@@ -13,7 +13,9 @@ export default function ArticleCard({ slug, title }: { slug: string, title: stri
                     Это временная статья-заглушка.
                 </p>
 
-                <LikeArticleButton />
+                <LikeArticleButton>
+                    <span>Поставить лайк ❤️ :</span>
+                </LikeArticleButton>
             </div>
         </Link>
     )

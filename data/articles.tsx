@@ -1,3 +1,4 @@
+import "server-only"
 export const articles = [
   {
     slug: "first-article",

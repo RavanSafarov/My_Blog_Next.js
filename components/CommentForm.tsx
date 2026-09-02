@@ -21,7 +21,7 @@ const CommentForm = () => {
                     type="text"
                     name="author"
                     placeholder="Имя"
-                    className="w-full rounded-lg border border-zinc-300 p-2 text-center"
+                    className="w-full rounded-lg border border-zinc-300 bg-white p-2 text-center text-black dark:border-zinc-700 dark:bg-zinc-800 dark:text-white"
                 />
                 <div className="text-center">
                     {state.errors?.author && (
@@ -31,9 +31,8 @@ const CommentForm = () => {
                     )}
                 </div>
             </div>
-
             <div>
-                <input type="text" name='text' placeholder='Комментарий' className="w-full rounded-lg border border-zinc-300 p-2 text-center" />
+                <input type="text" name='text' placeholder='Комментарий' className="w-full rounded-lg border border-zinc-300 bg-white p-2 text-center text-black dark:border-zinc-700 dark:bg-zinc-800 dark:text-white" />
                 <div className="text-center">
                     {state.errors?.text && (
                         <p className="mt-1 text-sm text-red-500">

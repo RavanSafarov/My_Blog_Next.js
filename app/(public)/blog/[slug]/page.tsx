@@ -21,19 +21,18 @@ export default async function ArticlePage({ params, }: { params: Promise<{ slug:
         notFound();
     }
     return (
-        <main className="flex min-h-screen items-center justify-center bg-background text-foreground p-6">
+        <main  className="flex min-h-screen items-center justify-center bg-zinc-100 p-6 text-black dark:bg-zinc-950 dark:text-white">
             <article className="w-full max-w-3xl rounded-xl bg-white p-10 shadow-lg dark:bg-zinc-900">
                 <img src={`https://i.pravatar.cc/150?img=${random}`} />
                 <h1 className="mb-3 text-4xl font-bold">
                     {article.title}
                 </h1>
-                <ReadingNowWidget slug={article.slug} />
                 <p className="mb-8 text-zinc-600 dark:text-zinc-400">
                     Это страница статьи.
                 </p>
 
                 <div>
-                    <h2 className="mb-3 text-lg font-semibold">
+                    <h2 className="mb-3 text-lg font-semibold text-black dark:text-white">
                         Теги:
                     </h2>
                     <div className="flex flex-wrap gap-2">
@@ -49,7 +48,7 @@ export default async function ArticlePage({ params, }: { params: Promise<{ slug:
                             Комментарии:
                         </h2>
                         {comments.map((comment, key) => (
-                            <div key={key} className="border rounded p-3">
+                            <div key={key} className="rounded border border-zinc-300 p-3 dark:border-zinc-700">
                                 <p className="font-bold">
                                     {comment.author}
                                 </p>
@@ -61,7 +60,12 @@ export default async function ArticlePage({ params, }: { params: Promise<{ slug:
                     </div>
                 </div>
                 <Suspense fallback={<p>Загрузка похожих статей...</p>}>
-                    <RelatedArticles currentSlug={article.slug} tags={article.tags} />
+                    <ReadingNowWidget slug={slug}>
+                        <RelatedArticles
+                            currentSlug={article.slug}
+                            tags={article.tags}
+                        />
+                    </ReadingNowWidget>
                 </Suspense>
             </article>
         </main>

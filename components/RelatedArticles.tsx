@@ -11,8 +11,8 @@ export default async function RelatedArticles({ currentSlug, tags, }: { currentS
         return null;
     }
     return (
-        <section className="mt-8 rounded-xl bg-zinc-950 p-6 shadow-xl">
-            <h2 className="mb-4 text-2xl font-bold text-white">
+        <section className="mt-8 rounded-xl bg-zinc-100 p-6 shadow-xl dark:bg-zinc-950">
+            <h2 className="mb-4 text-2xl font-bold text-black dark:text-white">
                 Похожие статьи
             </h2>
 

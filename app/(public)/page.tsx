@@ -11,8 +11,8 @@ export default function Home() {
   const lastUpdate = new Date().toLocaleString();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background text-foreground">
-      <main className="grid w-full max-w-3xl gap-6 rounded-xl bg-white p-10 shadow-lg dark:bg-zinc-900">
+    <div className="flex min-h-screen items-center justify-center bg-white text-black dark:bg-zinc-950 dark:text-white">
+      <main className="grid w-full max-w-3xl gap-6 rounded-xl bg-white p-10 text-black shadow-lg dark:bg-zinc-900 dark:text-white">
         <h1 className="text-center text-4xl font-bold">
           My Home Work
         </h1>
